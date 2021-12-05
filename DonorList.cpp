@@ -33,11 +33,23 @@ int DonorList::getNoOfDonors() const
 
 double DonorList::getTotalDonations() const
 {
-    double amountDonated = 0.0;
+    double amountDonated{0.0};
     auto current = donorList->cbegin(), end = donorList->cend();
-    for (; current != end; ++current)
-        amountDonated += current->getAmountDonated();
+    for (auto const &elem : *donorList)
+        amountDonated += elem.getAmountDonated();
     return amountDonated;
+}
+
+double DonorList::getHighestDonation() const
+{
+    double highestAmountDonated{0.0};
+    for (auto const &elem : *donorList)
+    {
+        double donation = elem.getAmountDonated();
+        if(donation > highestAmountDonated)
+            highestAmountDonated = donation;
+    }
+    return highestAmountDonated;
 }
 
 bool DonorList::isEmpty() const
@@ -54,11 +66,9 @@ void DonorList::deleteDonor(int memberID)
 {
     if (!searchID(memberID))
     {
-        cerr << "Donnor not in list, cannot delete.";
+        cout << "Donor not in list, cannot delete.";
     }
     else {
-
-
         auto donor = find(donorList->begin(), donorList->end(), memberID);
         donorList->erase(donor);
     }
@@ -70,9 +80,8 @@ void DonorList::printAllDonors() const
         cout << "Donor list is empty";
     else
     {
-        auto current = donorList->cbegin(), end = donorList->cend();
-        for (; current != end; ++current)
-            current->printMemberInfo();
+        for (auto const &elem : *donorList)
+            elem.printMemberInfo();
     }
 }
 
@@ -82,18 +91,19 @@ void DonorList::printAllDonations() const
         cout << "Donor list is empty";
     else
     {
-        auto current = donorList->cbegin(), end = donorList->cend();
-        for (; current != end; ++current)
-            current->printDonation();
+        for (auto const &elem : *donorList)
+            elem.printDonation();
     }
 }
 
 void DonorList::clearList()
 {
-    
+    donorList->empty();
 }
 
 DonorList::~DonorList()
 {
     clearList();
+    delete donorList;
+    donorList = nullptr;
 }

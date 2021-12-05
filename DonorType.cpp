@@ -69,6 +69,7 @@ bool DonorType::operator<(const DonorType& otherDonor) const
 	else
 		return  amount < otherDonor.amount;
 }
+
 bool DonorType::operator==(int memberShipNo) const
 {
 	return this->getMembershipNo() == memberShipNo;
