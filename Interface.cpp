@@ -30,7 +30,10 @@ void displayMenu()
     cout << string(4, ' ') << "1. Add a donor\n";
     cout << string(4, ' ') << "2. Delete a donor\n";
     cout << string(4, ' ') << "3. Print all donor\n";
-    cout << string(4, ' ') << "4. To Exit\n\n";
+    cout << string(4, ' ') << "4. Print all donations\n";
+    cout << string(4, ' ') << "5. Print total donations\n";
+    cout << string(4, ' ') << "6. Print highest donation\n";
+    cout << string(4, ' ') << "7. To Exit\n\n";
 }
 
 void processSelection(DonorList& aDonorList)
@@ -44,25 +47,43 @@ void processSelection(DonorList& aDonorList)
         int selection{ 0 };
         cin >> selection;
 
-        switch (selection)
+        if (selection == 1)
         {
-        case 1:
             cout << endl;
             addDonor(aDonorList);
-            break;
-        case 2:
+        }
+        else if (selection == 2)
+        {
             cout << endl;
             deleteDonor(aDonorList);
-            break;
-        case 3:
+        }
+        else if (selection == 3)
+        {
             cout << endl;
             printAllDonors(aDonorList);
-            break;
-        case 4:
+        }
+        else if (selection == 4)
+        {
+            cout << endl;
+            printAllDonations(aDonorList);
+        }
+        else if (selection == 5)
+        {
+            cout << endl;
+            printTotalDonations(aDonorList);
+        }
+        else if (selection == 6)
+        {
+            cout << endl;
+            printHighestDonation(aDonorList);
+        }
+        else if (selection == 7)
+        {
             cout << "\n  => Thank you for visiting our site!\n";
             exit = true;
-            break;
-        default:
+        }
+        else
+        {
             cout << "\n  => Sorry. That is not a selection.\n";
         }
 
@@ -116,4 +137,19 @@ void deleteDonor(DonorList& aDonorList)
 void printAllDonors(DonorList& aDonorList)
 {
     aDonorList.printAllDonors();
+}
+
+void printAllDonations(DonorList& aDonorList)
+{
+    aDonorList.printAllDonations();
+}
+
+void printTotalDonations(DonorList& aDonorList)
+{
+    cout << "Total donations: &" << aDonorList.getTotalDonations() << endl;
+}
+
+void printHighestDonation(DonorList& aDonorList)
+{
+    cout << "Highest donation: $" << aDonorList.getHighestDonation() << endl;
 }
