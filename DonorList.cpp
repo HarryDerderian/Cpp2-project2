@@ -34,7 +34,6 @@ int DonorList::getNoOfDonors() const
 double DonorList::getTotalDonations() const
 {
     double amountDonated{0.0};
-    auto current = donorList->cbegin(), end = donorList->cend();
     for (auto const &elem : *donorList)
         amountDonated += elem.getAmountDonated();
     return amountDonated;
