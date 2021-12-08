@@ -1,16 +1,16 @@
 /*
-    Noble Team
+	Noble Team
 
-    Noble, Trevor
-    Derderian, Harry
-    Kaboli, Seena
-    Asbun, Guido
-    Kim, Yeomyung
+	Asbun, Guido
+	Derderian, Harry
+	Kaboli, Seena
+	Kim, Yeomyung
+	Noble, Trevor
 
-    December 3, 2021
+	December 8, 2021
 
-    CS A250
-    Project 1
+	CS A250
+	Project 2
 */
 
 #include "DonorList.h"
