@@ -44,8 +44,8 @@ public:
 	void clearList();
 	~DonorList();
 
-	//DonorList(const DonorList&);
-	//DonorList& operator=(const DonorList&);
+	DonorList(const DonorList&);
+	DonorList& operator=(const DonorList&);
 
 private:
 	set<DonorType>* donorList;
