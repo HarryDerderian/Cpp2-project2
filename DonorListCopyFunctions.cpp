@@ -16,8 +16,12 @@
 
 using namespace std;
 
-//Copy constructor
+/*
+Copy constructor
+	Parameter: an object of the DonorList class
+*/
 DonorList::DonorList(const DonorList& otherList)
 {
-    *DonorList.this = new set<DonorList>(otherList);
+    donorList = new set<DonorType>;
+    *donorList = *(otherList.donorList);
 }
