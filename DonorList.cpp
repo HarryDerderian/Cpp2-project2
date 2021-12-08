@@ -16,93 +16,100 @@
 #include "DonorList.h"
 #include "DonorType.h"
 #include "set"
+
 #include <algorithm>
 
 using namespace std;
 
 void DonorList::addDonor(const std::string& firstName,
-    const std::string& lastName, int memberNum, int donation)
+	const std::string& lastName, int memberNum, int donation)
 {
-   donorList->insert(DonorType(firstName,lastName,memberNum,donation));
+	donorList->insert(DonorType(firstName,lastName,
+			memberNum,donation));
 }
 
 int DonorList::getNoOfDonors() const
 {
-    return static_cast<int>(donorList->size());
+	return static_cast<int>(donorList->size());
 }
 
 double DonorList::getTotalDonations() const
 {
-    double amountDonated{0.0};
-    for (auto const &elem : *donorList)
-        amountDonated += elem.getAmountDonated();
-    return amountDonated;
+	double amountDonated{0.0};
+	for (auto const &elem : *donorList)
+		amountDonated += elem.getAmountDonated();
+	return amountDonated;
 }
 
 double DonorList::getHighestDonation() const
 {
-    double highestAmountDonated{0.0};
-    for (auto const &elem : *donorList)
-    {
-        double donation = elem.getAmountDonated();
-        if(donation > highestAmountDonated)
-            highestAmountDonated = donation;
-    }
-    return highestAmountDonated;
+	double highestAmountDonated{0.0};
+	for (auto const &elem : *donorList)
+	{
+		double donation = elem.getAmountDonated();
+		if(donation > highestAmountDonated)
+			highestAmountDonated = donation;
+	}
+	return highestAmountDonated;
 }
 
 bool DonorList::isEmpty() const
 {
-    return getNoOfDonors() == 0;
+	return getNoOfDonors() == 0;
 }
 
 bool DonorList::searchID(int memberID) const
 {
-   return find(donorList->begin(), donorList->end(), memberID) != donorList->end();
+	return find(donorList->begin(), donorList->end(), memberID) != 
+			donorList->end();
 }
 
 void DonorList::deleteDonor(int memberID)
 {
-    if (!searchID(memberID))
-    {
-        cout << "Donor not in list, cannot delete.";
-    }
-    else {
-        auto donor = find(donorList->begin(), donorList->end(), memberID);
-        donorList->erase(donor);
-    }
+	if (!searchID(memberID))
+		cout << "Donor not in list, cannot delete.";
+	else
+	{
+		auto donor = find(donorList->begin(),
+					donorList->end(), memberID);
+		donorList->erase(donor);
+	}
 }
 
 void DonorList::printAllDonors() const
 {
-    if (isEmpty())
-        cout << "Donor list is empty";
-    else
-    {
-        for (auto const &elem : *donorList)
-            elem.printMemberInfo();
-    }
+	if (isEmpty())
+		cout << "Donor list is empty";
+	else
+	{
+		for (auto const &elem : *donorList)
+			elem.printMemberInfo();
+	}
 }
 
+// Update this function so that before calling the function 
+// MemberType::getMembershipNo() it includes the membership number
+// in parenthesis: (###) Lastname, Firstname
+// 
 void DonorList::printAllDonations() const
 {
-    if (isEmpty())
-        cout << "Donor list is empty";
-    else
-    {
-        for (auto const &elem : *donorList)
-            elem.printDonation();
-    }
+	if (isEmpty())
+		cout << "Donor list is empty";
+	else
+	{
+		for (auto const &elem : *donorList)
+			elem.printDonation();
+	}
 }
 
 void DonorList::clearList()
 {
-    donorList->empty();
+	donorList->empty();
 }
 
 DonorList::~DonorList()
 {
-    clearList();
-    delete donorList;
-    donorList = nullptr;
+	clearList();
+	delete donorList;
+	donorList = nullptr;
 }

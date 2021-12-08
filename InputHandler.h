@@ -51,4 +51,3 @@ void getDonorData(DonorList& donorList)
 
 	infile.close();
 }
-

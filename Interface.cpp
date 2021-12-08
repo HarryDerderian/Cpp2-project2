@@ -146,10 +146,12 @@ void printAllDonations(DonorList& aDonorList)
 
 void printTotalDonations(DonorList& aDonorList)
 {
-    cout << "Total donations: $" << aDonorList.getTotalDonations() << endl;
+    cout << "Total donations: $" << 
+		aDonorList.getTotalDonations() << endl;
 }
 
 void printHighestDonation(DonorList& aDonorList)
 {
-    cout << "Highest donation: $" << aDonorList.getHighestDonation() << endl;
+    cout << "Highest donation: $" <<
+		aDonorList.getHighestDonation() << endl;
 }

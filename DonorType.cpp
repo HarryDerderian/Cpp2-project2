@@ -57,7 +57,8 @@ void DonorType::printDonor() const
 
 void DonorType::printDonation() const
 {
-	cout << this->getFirstName() << ", " << this->getLastName() << endl;
+	cout << this->getFirstName() << ", " <<
+			this->getLastName()  << endl;
 	cout << fixed << showpoint << setprecision(2);
 	cout << "Donation Amount: $" << amount << endl;
 }
@@ -65,15 +66,16 @@ void DonorType::printDonation() const
 bool DonorType::operator<(const DonorType& otherDonor) const
 {
 	if (amount == otherDonor.amount)
-		return  this->getMembershipNo() < otherDonor.getMembershipNo();
+		return this->getMembershipNo() < otherDonor.getMembershipNo();
 	else
-		return  amount < otherDonor.amount;
+		return amount < otherDonor.amount;
 }
 
 bool DonorType::operator==(int memberShipNo) const
 {
 	return this->getMembershipNo() == memberShipNo;
 	// ... why does this work lol
+	// this condition be truthy
 }
 
 DonorType::~DonorType() { }
