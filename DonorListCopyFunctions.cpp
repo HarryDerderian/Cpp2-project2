@@ -11,7 +11,7 @@
 */
 
 #include "DonorList.h"
-#include "DonorType.h"
+#include <iostream>
 #include "set"
 
 using namespace std;
@@ -24,4 +24,20 @@ DonorList::DonorList(const DonorList& otherList)
 {
     donorList = new set<DonorType>;
     *donorList = *(otherList.donorList);
+}
+
+DonorList& DonorList::operator=(const DonorList& otherList)
+{
+    
+    if(&otherList != this)
+    {
+        *this = otherList;
+        
+    }
+    else
+    {
+        cerr << "\nAttempted assignment to itself." << endl;
+    }
+    
+    return *this;
 }
