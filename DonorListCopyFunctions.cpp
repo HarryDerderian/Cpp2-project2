@@ -1,18 +1,22 @@
 /*
 	Noble Team
-	Noble, Trevor
+
+	Asbun, Guido
 	Derderian, Harry
 	Kaboli, Seena
-	Asbun, Guido
 	Kim, Yeomyung
-	December 3, 2021
+	Noble, Trevor
+
+	December 8, 2021
+
 	CS A250
-	Project 1
+	Project 2
 */
 
 #include "DonorList.h"
-#include <iostream>
 #include "set"
+
+#include <iostream>
 
 using namespace std;
 

@@ -57,10 +57,11 @@ void DonorType::printDonor() const
 
 void DonorType::printDonation() const
 {
-	cout << this->getFirstName() << ", " <<
-			this->getLastName()  << endl;
+	cout << "(" << this->getMembershipNo() << ") ";
+	cout << this->getLastName() << ", " <<
+			this->getFirstName()  << endl;
 	cout << fixed << showpoint << setprecision(2);
-	cout << "Donation Amount: $" << amount << endl;
+	cout << "    Donation amount: $" << amount << endl;
 }
 
 bool DonorType::operator<(const DonorType& otherDonor) const
