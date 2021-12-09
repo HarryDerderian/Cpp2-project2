@@ -75,8 +75,6 @@ bool DonorType::operator<(const DonorType& otherDonor) const
 bool DonorType::operator==(int memberShipNo) const
 {
 	return this->getMembershipNo() == memberShipNo;
-	// ... why does this work lol
-	// this condition be truthy
 }
 
 DonorType::~DonorType() { }
