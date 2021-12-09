@@ -29,7 +29,7 @@ void displayMenu()
     cout << "\nSelect one of the following:\n\n";
     cout << string(4, ' ') << "1. Add a donor\n";
     cout << string(4, ' ') << "2. Delete a donor\n";
-    cout << string(4, ' ') << "3. Print all donor\n";
+    cout << string(4, ' ') << "3. Print all donors\n";
     cout << string(4, ' ') << "4. Print all donations\n";
     cout << string(4, ' ') << "5. Print total donations\n";
     cout << string(4, ' ') << "6. Print highest donation\n";
