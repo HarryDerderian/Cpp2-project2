@@ -32,16 +32,10 @@ DonorList::DonorList(const DonorList& otherList)
 
 DonorList& DonorList::operator=(const DonorList& otherList)
 {
-    
     if(&otherList != this)
-    {
         *this = otherList;
-        
-    }
     else
-    {
         cerr << "\nAttempted assignment to itself." << endl;
-    }
     
     return *this;
 }
