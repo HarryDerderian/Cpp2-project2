@@ -7,7 +7,7 @@
 	Kim, Yeomyung
 	Noble, Trevor
 
-	December 8, 2021
+	December 16, 2021
 
 	CS A250
 	Project 2
@@ -16,8 +16,8 @@
 #ifndef DONORLIST_H
 #define DONORLIST_H
 
-#include"DonorType.h"
-#include<set>
+#include "DonorType.h"
+#include <set>
 
 using namespace std;
 

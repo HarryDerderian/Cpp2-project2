@@ -7,7 +7,7 @@
 	Kim, Yeomyung
 	Noble, Trevor
 
-	December 8, 2021
+	December 16, 2021
 
 	CS A250
 	Project 2
@@ -15,9 +15,8 @@
 
 #include "DonorList.h"
 #include "DonorType.h"
-#include "set"
 
-#include <iostream>
+#include <set>
 #include <algorithm>
 
 using namespace std;
@@ -67,36 +66,22 @@ bool DonorList::searchID(int memberID) const
 
 void DonorList::deleteDonor(int memberID)
 {
-	if (!searchID(memberID))
-		cout << "Donor not in list, cannot delete.";
-	else
-	{
 		auto donor = find(donorList->begin(),
 					donorList->end(), memberID);
-		donorList->erase(donor);
-	}
+        if(donor != donorList->end())
+		    donorList->erase(donor);
 }
 
 void DonorList::printAllDonors() const
 {
-	if (isEmpty())
-		cout << "Donor list is empty";
-	else
-	{
 		for (auto const &elem : *donorList)
 			elem.printMemberInfo();
-	}
 }
 
 void DonorList::printAllDonations() const
 {
-	if (isEmpty())
-		cout << "Donor list is empty";
-	else
-	{
 		for (auto const &elem : *donorList)
 			elem.printDonation();
-	}
 }
 
 void DonorList::clearList()
