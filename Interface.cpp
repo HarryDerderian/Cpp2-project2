@@ -158,12 +158,12 @@ void printAllDonations(const DonorList& aDonorList)
 void printTotalDonations(const DonorList& aDonorList)
 {
     cout << fixed << showpoint << setprecision(2);
-    cout << "Total donations: $" << 
+    cout << string(5, ' ') << "Total donations: $" <<
 		aDonorList.getTotalDonations() << endl;
 }
 
 void printHighestDonation(const DonorList& aDonorList)
 {
-    cout << "Highest donation: $" <<
+    cout << string(5, ' ') << "Highest donation: $" <<
 		aDonorList.getHighestDonation() << endl;
 }
