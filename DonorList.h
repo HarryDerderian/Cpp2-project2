@@ -27,7 +27,7 @@ public:
 	DonorList() : donorList(new set<DonorType>) {}
 
 	void addDonor(const std::string& firstName,
-		const std::string& lastName, int memberNum, int donation);
+		const std::string& lastName, int memberNum, double donation);
 
 	int getNoOfDonors() const;
 	double getTotalDonations() const;

@@ -17,8 +17,6 @@
 #include "Interface.h"
 #include "InputHandler.h"
 
-using namespace std;
-
 int main()
 {
 	DonorList aDonorList;

@@ -20,10 +20,6 @@
 
 using namespace std;
 
-/*
-Copy constructor
-	Parameter: an object of the DonorList class
-*/
 DonorList::DonorList(const DonorList& otherList)
 {
     donorList = new set<DonorType>;
@@ -33,8 +29,7 @@ DonorList::DonorList(const DonorList& otherList)
 DonorList& DonorList::operator=(const DonorList& otherList)
 {
     if(&otherList != this)
-      donorList = ohterList.donorList;
-	    // *this = otherList;
+      *this = otherList;
     else
         cerr << "\nAttempted assignment to itself." << endl;
     

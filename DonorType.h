@@ -18,8 +18,6 @@
 
 #include "MemberType.h"
 
-#include <iostream>
-
 class DonorType : public MemberType
 {
 public:
@@ -43,10 +41,10 @@ public:
 
 	~DonorType();
 
-	bool operator<(const DonorType&) const;
+	bool operator<(const DonorType& otherDonor) const;
 	bool operator==(int memberShipNo) const;
 private:
-	double amount;
+	double amount = 0;
 };
 
 #endif

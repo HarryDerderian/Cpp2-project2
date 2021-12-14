@@ -17,12 +17,13 @@
 #include "DonorType.h"
 #include "set"
 
+#include <iostream>
 #include <algorithm>
 
 using namespace std;
 
 void DonorList::addDonor(const std::string& firstName,
-	const std::string& lastName, int memberNum, int donation)
+	const std::string& lastName, int memberNum, double donation)
 {
 	donorList->insert(DonorType(firstName,lastName,
 			memberNum,donation));
@@ -87,10 +88,6 @@ void DonorList::printAllDonors() const
 	}
 }
 
-// Update this function so that before calling the function 
-// MemberType::getMembershipNo() it includes the membership number
-// in parenthesis: (###) Lastname, Firstname
-// 
 void DonorList::printAllDonations() const
 {
 	if (isEmpty())
