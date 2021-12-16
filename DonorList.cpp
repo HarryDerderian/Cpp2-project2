@@ -35,7 +35,7 @@ int DonorList::getNoOfDonors() const
 
 double DonorList::getTotalDonations() const
 {
-	double amountDonated{0.0};
+	double amountDonated = 0.0;
 	for (auto const &elem : *donorList)
 		amountDonated += elem.getAmountDonated();
 	return amountDonated;
@@ -43,7 +43,7 @@ double DonorList::getTotalDonations() const
 
 double DonorList::getHighestDonation() const
 {
-	double highestAmountDonated{0.0};
+	double highestAmountDonated = 0.0;
 	for (auto const &elem : *donorList)
 	{
 		double donation = elem.getAmountDonated();

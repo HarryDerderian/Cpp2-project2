@@ -44,7 +44,7 @@ public:
 	bool operator<(const DonorType& otherDonor) const;
 	bool operator==(int memberShipNo) const;
 private:
-	double amount = 0;
+	double amount = 0.0;
 };
 
 #endif
