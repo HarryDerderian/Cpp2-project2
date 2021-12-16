@@ -19,12 +19,10 @@
 #include "DonorType.h"
 #include <set>
 
-using namespace std;
-
 class DonorList
 {
 public:
-	DonorList() : donorList(new set<DonorType>) {}
+	DonorList() : donorList(new std::set<DonorType>) {}
 
 	void addDonor(const std::string& firstName,
 		const std::string& lastName, int memberNum, double donation);
@@ -48,7 +46,7 @@ public:
 	DonorList& operator=(const DonorList&);
 
 private:
-	set<DonorType>* donorList;
+	std::set<DonorType>* donorList;
 };
 
 #endif

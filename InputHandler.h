@@ -20,11 +20,9 @@
 #include <string>
 #include <iomanip>
 
-using namespace std;
-
-void createDonorList(ifstream& infile, DonorList& donorList)
+void createDonorList(std::ifstream& infile, DonorList& donorList)
 {
-	string  fName, lName;
+	std::string  fName, lName;
 	int memberID = 0;
 	double donation = 0.0;
 
@@ -37,14 +35,14 @@ void createDonorList(ifstream& infile, DonorList& donorList)
 
 void getDonorData(DonorList& donorList)
 {
-	ifstream infile;
+	std::ifstream infile;
 
 	infile.open("donors_data.txt");
 
 	if (!infile)
 	{
-		cerr << "Input file does not exist." << endl;
-		exit(1); // terminates program
+		std::cerr << "Input file does not exist." << std::endl;
+		std::exit(1); // terminates program
 	}
 
 	createDonorList(infile, donorList);

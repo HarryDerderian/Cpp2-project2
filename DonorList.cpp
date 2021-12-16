@@ -21,8 +21,8 @@
 
 using namespace std;
 
-void DonorList::addDonor(const std::string& firstName,
-	const std::string& lastName, int memberNum, double donation)
+void DonorList::addDonor(const string& firstName,
+	const string& lastName, int memberNum, double donation)
 {
 	donorList->insert(DonorType(firstName,lastName,
 			memberNum,donation));
