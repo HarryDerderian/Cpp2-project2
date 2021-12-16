@@ -86,12 +86,11 @@ void DonorList::printAllDonations() const
 
 void DonorList::clearList()
 {
-	donorList->empty();
+	donorList->clear();
 }
 
 DonorList::~DonorList()
 {
-	clearList();
 	delete donorList;
 	donorList = nullptr;
 }
