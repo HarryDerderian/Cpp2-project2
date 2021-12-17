@@ -33,5 +33,5 @@ DonorList& DonorList::operator=(const DonorList& otherList)
     else
         cerr << "\nAttempted assignment to itself." << endl;
     
-    return *donorList;
+    return *this;
 }
